@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: Quicksand, sans-serif;
+}
+
+:root {
+  --color-primary: #1b1f26;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 18rem;
+  height: auto;
+}
+
+.nav-bar {
+  display: block;
+}
+
+.nav-bar__container {
+  list-style: none;
+}
+
+.nav-bar__links {
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.nav-bar__links:not(:last-child) {
+  padding-right: 1rem;
+}
+
+.hero {
+  background-color: var(--color-primary);
+  height: 50rem;
+  margin-bottom: 3rem;
+}
+
+/* CARD SECTION */
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  width: 134rem;
+  margin: 0 auto;
+}
+
+.card {
+  border-radius: 1rem;
+  background-color: var(--color-primary);
+  width: 40rem;
+  height: 40rem;
+}
