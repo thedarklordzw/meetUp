@@ -11,9 +11,22 @@ html {
 
 :root {
   --color-primary: #1b1f26;
+  --color-primary-light: #505c73;
+  --color-primary-light-2: #3e4759;
+  --color-white: #fff;
+}
+
+.container {
+  width: 134rem;
+  margin: 0 auto;
 }
 
 .header {
+  background-color: var(--color-primary-light);
+  margin-bottom: 3rem;
+}
+
+.header__section {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,19 +39,56 @@ html {
 
 .nav-bar {
   display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
 }
 
 .nav-bar__container {
   list-style: none;
 }
 
-.nav-bar__links {
+.nav-bar__list {
   display: inline-block;
-  text-transform: uppercase;
 }
 
-.nav-bar__links:not(:last-child) {
-  padding-right: 1rem;
+.nav-bar__links {
+  position: relative;
+  z-index: 100;
+}
+
+.nav-bar__links:link,
+.nav-bar__links:visited {
+  text-transform: uppercase;
+  color: var(--color-white);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.nav-bar__links::before {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  opacity: 0;
+  height: 100%;
+  background-color: var(--color-primary);
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 0.8rem;
+  z-index: -1;
+  transition: all 0.2s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.nav-bar__list:not(:last-child) {
+  padding-right: 2rem;
+}
+
+.nav-bar__links:hover::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .hero {
@@ -52,13 +102,39 @@ html {
 .cards {
   display: flex;
   justify-content: space-between;
-  width: 134rem;
-  margin: 0 auto;
+  margin-bottom: 3rem;
 }
 
 .card {
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   background-color: var(--color-primary);
   width: 40rem;
   height: 40rem;
+}
+
+/* TESTIMONIALS */
+
+.testimonials {
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  margin-bottom: 3rem;
+}
+
+.testimonial-1 {
+  padding: 2rem 2rem;
+}
+
+.user-name {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.user-text {
+  font-size: 1.6rem;
+}
+
+/* FOOTER */
+
+.footer {
+  background-color: var(--color-primary);
 }
