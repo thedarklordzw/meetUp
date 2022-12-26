@@ -68,9 +68,9 @@ html {
 .nav-bar__links::before {
   content: '';
   display: inline-block;
-  width: 100%;
-  opacity: 0;
+
   height: 100%;
+  width: 0;
   background-color: var(--color-primary);
   padding: 1rem 2rem;
   position: absolute;
@@ -79,7 +79,8 @@ html {
   transform: translate(-50%, -50%) scale(0);
   border-radius: 0.8rem;
   z-index: -1;
-  transition: all 0.2s cubic-bezier(0.65, 0, 0.35, 1);
+  transition: transform 0.1s cubic-bezier(0.65, 0, 0.35, 1),
+    width 0.1s 0.1s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 .nav-bar__list:not(:last-child) {
@@ -87,8 +88,8 @@ html {
 }
 
 .nav-bar__links:hover::before {
-  opacity: 1;
   transform: translate(-50%, -50%) scale(1);
+  width: 100%;
 }
 
 .hero {
